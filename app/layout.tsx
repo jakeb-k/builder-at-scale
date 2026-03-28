@@ -25,6 +25,10 @@ export const metadata: Metadata = {
     default: "Jakeb Knowles | Brisbane Software Engineer and Product-Focused Builder",
     template: "%s | Jakeb Knowles",
   },
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    shortcut: ["/icon.svg"],
+  },
   description:
     "Brisbane, Australia software engineer building end-to-end products across web, mobile, APIs, AI-assisted workflows, and platform modernisation.",
   applicationName: "Jakeb Knowles",

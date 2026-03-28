@@ -183,7 +183,7 @@ export const projects: Project[] = [
     status: "Shipped build",
     name: "Picklewear",
     summary:
-      "A full-stack ecommerce rebuild born from a forced rebrand, with a stronger product and a sharper technical foundation on the other side.",
+      "A full-stack ecommerce rebuild born from a forced rebrand (lawsuit), with a stronger product and a sharper technical foundation on the other side.",
     body:
       "Picklewear is proof that I can build the whole thing. Storefront, admin tooling, payments, sync workflows, deployment flow, search, product ops, and the usual pile of edge cases that only show up when real people are using the system.",
     highlights: [
