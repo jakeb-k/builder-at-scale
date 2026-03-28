@@ -1,0 +1,83 @@
+name: Deploy Production
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: "20"
+  DEPLOY_ROOT: /var/www/jakebknowles.com
+  RELEASES_TO_KEEP: "5"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static export
+        run: npm run build
+
+      - name: Prepare SSH
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "${{ secrets.SSH_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+          printf '%s\n' "${{ secrets.SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key ~/.ssh/known_hosts
+
+      - name: Archive release
+        run: tar -C out -czf site.tar.gz .
+
+      - name: Upload release artifact
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+        run: |
+          set -euo pipefail
+          ARCHIVE_NAME="builder-at-scale-${GITHUB_SHA}.tar.gz"
+          RELEASE_DIR="${DEPLOY_ROOT}/releases/${GITHUB_SHA}"
+
+          ssh -i ~/.ssh/deploy_key -p "${SSH_PORT}" "${SSH_USER}@${SSH_HOST}" "mkdir -p '${RELEASE_DIR}'"
+          scp -i ~/.ssh/deploy_key -P "${SSH_PORT}" site.tar.gz "${SSH_USER}@${SSH_HOST}:/tmp/${ARCHIVE_NAME}"
+
+      - name: Activate release
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+        run: |
+          set -euo pipefail
+          ssh -i ~/.ssh/deploy_key -p "${SSH_PORT}" "${SSH_USER}@${SSH_HOST}" <<EOF
+          set -euo pipefail
+
+          DEPLOY_ROOT="${DEPLOY_ROOT}"
+          RELEASE_DIR="${DEPLOY_ROOT}/releases/${GITHUB_SHA}"
+          CURRENT_LINK="${DEPLOY_ROOT}/current"
+          TMP_ARCHIVE="/tmp/builder-at-scale-${GITHUB_SHA}.tar.gz"
+
+          tar -xzf "\${TMP_ARCHIVE}" -C "\${RELEASE_DIR}"
+          ln -sfn "\${RELEASE_DIR}" "\${CURRENT_LINK}"
+          rm -f "\${TMP_ARCHIVE}"
+
+          if [ -d "\${DEPLOY_ROOT}/releases" ]; then
+            ls -1dt "\${DEPLOY_ROOT}"/releases/* 2>/dev/null | tail -n +$((RELEASES_TO_KEEP + 1)) | xargs -r rm -rf
+          fi
+          EOF
