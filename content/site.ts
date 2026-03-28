@@ -57,11 +57,11 @@ export const navSections: NavSection[] = [
 ];
 
 export const heroMetrics = [
+  "Brisbane, Australia",
   "Code Wrangler @ Simpro",
-  "10+ years around code, nearly 3 years doing it professionally",
-  "Griffith University Academic Improvement Award",
-  "Best when the problem is ambiguous",
-  "Built 4 sites and 2 apps when I finally bet on myself",
+  "Builder across product, frontend, backend, APIs, and AI-assisted workflows",
+  "Best when the problem is ambiguous, research-heavy, or slightly cursed",
+  "Trusted for outside-the-box ideas that turn strange problems into shipped software",
 ];
 
 export const journeyEntries: JourneyEntry[] = [

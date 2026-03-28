@@ -236,8 +236,9 @@ export function PortfolioPage() {
               <h1 className="display hero-name">Jakeb Knowles</h1>
               <p className="hero-tagline">Builder of products, systems, and strange ideas.</p>
               <p className="lead reveal" data-reveal>
-                I like the whole problem: product calls, frontend, backend, AI-assisted workflows, and the weird bits in
-                between that decide whether something actually survives contact with reality.
+                Brisbane-based and product-focused, I like the whole problem: product calls, frontend, backend,
+                AI-assisted workflows, and the weird bits in between that decide whether something actually survives
+                contact with reality.
               </p>
               <div className="hero-actions reveal" data-reveal>
                 <a className="button" href="#journey">
