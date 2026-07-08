@@ -49,6 +49,13 @@ export type ContactLink = {
   href: string;
 };
 
+export type ResumeLink = {
+  label: string;
+  value: string;
+  href: string;
+  downloadName: string;
+};
+
 export const navSections: NavSection[] = [
   { id: "journey", label: "Journey" },
   { id: "now", label: "Now" },
@@ -237,5 +244,14 @@ export const contactLinks: ContactLink[] = [
     label: "LinkedIn",
     value: "jakeb-knowles-software-dev",
     href: "https://www.linkedin.com/in/jakeb-knowles-software-dev/",
+  },
+];
+
+export const resumeLinks: ResumeLink[] = [
+  {
+    label: "Resume",
+    value: "Product-focused full-stack engineer",
+    href: "/resumes/jakeb-knowles-resume.pdf",
+    downloadName: "jakeb-knowles-resume.pdf",
   },
 ];

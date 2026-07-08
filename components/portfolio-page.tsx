@@ -11,6 +11,7 @@ import {
   navSections,
   principles,
   projects,
+  resumeLinks,
   signalStrip,
   workProofs,
 } from "@/content/site";
@@ -29,7 +30,7 @@ function blend(progress: number, from: [number, number, number], to: [number, nu
 }
 
 function getLinkBehavior(href: string) {
-  if (href.startsWith("mailto:")) {
+  if (href.startsWith("mailto:") || href.startsWith("/")) {
     return {};
   }
 
@@ -222,6 +223,9 @@ export function PortfolioPage() {
                 {section.label}
               </a>
             ))}
+            <a href={resumeLinks[0].href} download={resumeLinks[0].downloadName}>
+              Resume
+            </a>
           </nav>
         </div>
       </header>
@@ -246,6 +250,9 @@ export function PortfolioPage() {
                 </a>
                 <a className="button button--ghost" href="#work">
                   See selected work
+                </a>
+                <a className="button button--ghost" href={resumeLinks[0].href} download={resumeLinks[0].downloadName}>
+                  Download resume
                 </a>
               </div>
             </div>
@@ -432,6 +439,15 @@ export function PortfolioPage() {
               <div className="contact-grid">
                 {contactLinks.map((link) => (
                   <a key={link.href} className="contact-card" href={link.href} {...getLinkBehavior(link.href)}>
+                    <span className="contact-card__label">{link.label}</span>
+                    <span className="contact-card__value">{link.value}</span>
+                  </a>
+                ))}
+              </div>
+
+              <div className="resume-downloads">
+                {resumeLinks.map((link) => (
+                  <a key={link.href} className="resume-download" href={link.href} download={link.downloadName}>
                     <span className="contact-card__label">{link.label}</span>
                     <span className="contact-card__value">{link.value}</span>
                   </a>
