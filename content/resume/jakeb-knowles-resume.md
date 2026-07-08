@@ -3,19 +3,20 @@
 ## Product-Focused Full-Stack Software Engineer | Product Builder
 
 Brisbane, QLD, Australia  
-Website: https://jakebknowles.com  
-LinkedIn: https://www.linkedin.com/in/jakeb-knowles-software-dev/  
-GitHub: https://github.com/jakeb-k
+Website: [https://jakebknowles.com](https://jakebknowles.com)  
+LinkedIn: [https://www.linkedin.com/in/jakeb-knowles-software-dev/](https://www.linkedin.com/in/jakeb-knowles-software-dev/)  
+GitHub: [https://github.com/jakeb-k](https://github.com/jakeb-k)
 
 Product-focused full-stack software engineer with 3+ years of experience turning ambiguous product problems into shipped SaaS, API, mobile, and real-time web applications. Strongest when working close to customers, product teams, and technical constraints at the same time: discovery, demos, architecture, frontend, backend, deployment readiness, and the details that decide whether a product survives real use.
 
 ## Core Strengths
 
-- Product engineering: client discovery, MVP demos, requirements gathering, product trade-offs, technical leadership.
-- Full-stack delivery: React, TypeScript, AdonisJS, Laravel, PHP, Symfony/Slim, Node.js, REST APIs, React Native, Next.js.
-- Data and real-time systems: PostgreSQL, TimescaleDB, PostGIS, Aurora, MySQL, SQLite, SSE, Mapbox/WebGL, multi-tenant access control.
-- Engineering leverage: test strategy, CI quality gates, legacy modernisation, documentation systems, AI-assisted development workflows.
-- Delivery environments: Jenkins, Backstage, GitHub Actions, Laravel Forge, DigitalOcean, Docker, Linux, Vault, ArgoCD logs.
+- Product Engineering: Customer Discovery, MVP Demos, Requirements Gathering, Product Trade-Offs, Technical Leadership.
+- Full-Stack Delivery: React, TypeScript, AdonisJS, Laravel, PHP, Symfony/Slim, Node.js, REST APIs, React Native, Next.js.
+- Applied Data Structures: Typed API Contracts, Keyed Collections, Queues, Pagination, Filtering, Aggregation, Relational Modelling, SQL Indexes, Frontend State Management.
+- Data and Real-Time Systems: PostgreSQL, TimescaleDB, PostGIS, Aurora, MySQL, SQLite, DynamoDB, SQS, SSE, Mapbox/WebGL, Multi-Tenant Access Control.
+- Engineering Leverage: Test Strategy, CI Quality Gates, Legacy Modernisation, Documentation Systems, AI-Assisted Development Workflows.
+- Delivery Environments: AWS Lambda, Terraform, Jenkins, Backstage, GitHub Actions, Laravel Forge, DigitalOcean, Docker, Linux, Vault, ArgoCD logs.
 
 ## Experience
 
@@ -23,31 +24,36 @@ Product-focused full-stack software engineer with 3+ years of experience turning
 
 Jun 2025 - Present | Brisbane, QLD | Hybrid
 
-- Led the technical rebuild of Simpro's fleet management platform, replacing a 13-year-old legacy solution with a modern real-time SPA for field service customers.
-- Acted as sole technical lead on a small product team, personally designing and implementing roughly 95% of the application across React, TypeScript, AdonisJS, TimescaleDB, Aurora, and Mapbox.
-- Partnered directly with PMs, designers, executives, and customers to demo MVPs, gather requirements, validate product direction, and help retain multiple six-figure ARR accounts.
-- Increased committed tracker demand from roughly 5k to 8k through customer demos and product discovery, with the product live in beta and broader release scheduled after testing and production hardening.
-- Architected an approved real-time tracking platform designed to support up to 20k trackers across four regions using TimescaleDB, PostGIS, SSE, and a Go ingestion layer.
-- Built a high-performance WebGL/Mapbox vehicle map capable of rendering roughly 1,000 vehicles smoothly, using batched SSE updates to avoid frontend performance degradation.
-- Improved fleet tracking from legacy 2-minute polling toward near-real-time location updates, with architecture capable of processing tracker pings at roughly 2-second intervals.
+#### Fleet Management Rebuild
+
+- Sole technical lead for the rebuild of Simpro's fleet management platform, replacing a 13-year-old legacy product with a React/TypeScript SPA and AdonisJS REST API.
+- Personally designed and implemented roughly 95% of the product across React, TypeScript, AdonisJS, TimescaleDB, Aurora, PostGIS, Mapbox/WebGL, SSE, TanStack Query, and Zustand.
+- Partnered with PMs, designers, executives, and customers to demo MVPs, gather requirements, retain multiple six-figure ARR accounts, and grow committed tracker demand from roughly 5k to 8k.
+- Architected an approved real-time tracking platform designed for up to 20k trackers across four regions, moving from 2-minute polling toward near-real-time updates.
+- Designed frontend and API data structures using typed contracts, keyed vehicle collections, batched SSE updates, and state/query patterns that kept roughly 1,000 map vehicles rendering smoothly.
+- Modelled relational, time-series, and geospatial data across Aurora, TimescaleDB, and PostGIS for vehicles, geosites, reports, location logs, site arrivals, and behaviour events.
+- Optimised reporting and metrics workflows using TimescaleDB aggregates, query design, asynchronous queues, and notification flows for long-running report generation.
 - Implemented multi-tenant access controls using JWT identity propagation, licence gating, company-scoped models, OAuth2 client credentials, and secure data access boundaries.
 - Built reporting, service booking, geosite arrival/departure, technician schedule, behaviour event, and notification workflows across the frontend and backend.
-- Maintained roughly 85% test coverage using Japa, Vitest, and Playwright, with CI quality gates blocking failed test builds before deployment.
-- Owned production readiness for beta/UAT deployment, including deployment start scripts, migration safety checks, environment readiness, and rollback-aware release processes.
-- Contributed heavily to TimescaleDB procurement and technical evaluation, comparing options including QuestDB and MongoDB against time-series, PostGIS, migration, and operational needs.
-- Developed internal AI-assisted engineering workflows using repo documentation, specialised agents, skills, hooks, and workflow prompts to accelerate planning, implementation, and review.
+- Maintained roughly 85% test coverage with Japa, Vitest, and Playwright while owning beta/UAT readiness, deployment scripts, migration safety checks, and CI quality gates.
 
-### Additional Simpro Contributions
+#### External API and Developer Experience
 
-- Contributed to Simpro's public partner API built on Symfony/Slim, adding endpoints, fixing production defects, and supporting OAuth2-authenticated integrations used by hundreds of partners.
-- Resolved 50+ partner API forum support threads, helping unblock external developers and identify documentation/product gaps.
-- Rebuilt the API documentation experience by extending a Redocly documentation site with custom search, reducing navigation from minutes of manual browsing to seconds of direct lookup.
-- Helped resolve multiple P1 API incidents, including cache-related failures introduced during a Slim v4 upgrade.
-- Led frontend modernisation of a React/Django data automation platform, migrating from CRA to Vite and upgrading MUI v4 to v6.
-- Reduced known frontend vulnerabilities from roughly 800 to 8 and improved build times from roughly 30 seconds to 2-3 seconds.
-- Created reusable base table and infinite-scroll table components while refactoring Cypress E2E tests to protect against regressions.
+- Built and maintained Simpro's public partner API on Symfony/Slim, adding endpoints, fixing production defects, supporting OAuth2 integrations, and adding Bruno E2E coverage for workflows used by hundreds of partners.
+- Built high-volume supplier import and invoice export integrations for enterprise customers including Wesco, Rexel, Sage Intacct, and Xero, using AWS Lambda, SQS, DynamoDB, Terraform, and API-driven bulk workflows.
+- Resolved 50+ partner API forum threads and helped resolve multiple P1 API incidents, including cache-related failures introduced during a Slim v4 upgrade.
+- Rebuilt the Redocly API documentation experience with custom search, reducing navigation from minutes of manual browsing to seconds of direct lookup.
+
+#### Legacy Modernisation
+
+- Led frontend modernisation of a React/Django data automation platform that generated invoices, supplier inventory, jobs, quotes, and other entities from email-fed document templates.
+- Migrated the platform from CRA to Vite, upgraded MUI v4 to v6, reduced known frontend vulnerabilities from roughly 800 to 8, and improved build times from roughly 30 seconds to 2-3 seconds.
+- Created reusable base table and infinite-scroll table components while refactoring Cypress E2E tests to protect against regressions and standardise shared UI patterns.
+
+#### Leadership and Engineering Leverage
+
 - Promoted from Junior Software Developer to Senior Associate Software Engineer to Software Engineer within nine months, driven by delivery speed, technical ownership, and ability to solve ambiguous product problems.
-- Delivered internal engineering talks on PHP/MCP, JavaScript frameworks, developer tools, and agentic engineering workflows.
+- Delivered internal engineering talks on PHP/MCP, JavaScript frameworks, developer tools, and agentic engineering workflows; built repo-specific AI workflows using docs, agents, skills, hooks, and review loops.
 
 ### Software Engineer - FONSEKA Innovations
 
@@ -57,18 +63,18 @@ Apr 2024 - Jun 2025 | Brisbane, QLD
 - Developed high-traffic Laravel applications for large userbases, using event-driven architecture, workflow optimisation, and test coverage targets around 90%.
 - Led delivery of Fertility Quest, a React Native and Expo mobile app backed by a Laravel API, token-based authentication, user profiles, activity logging, Stripe subscription tiers, quizzes, and structured course content.
 - Delivered the Fertility Quest MVP in one month against an initial two-month estimate, balancing mobile UX, backend API design, subscription handling, and release readiness.
-- Built an internal project management platform spanning lead generation, quoting, order handling, MSA workflows, dashboards, and sales lifecycle metrics.
-- Used TDD across Laravel and React with PHPUnit, Pest, and Jest to improve confidence across core business workflows.
+- Built an internal project management platform spanning lead generation, quoting, order handling, MSA workflows, real-time dashboards, sales lifecycle metrics, and workflow visibility across the business.
+- Used TDD across Laravel and React with PHPUnit, Pest, and Jest to improve confidence across core business workflows, API contracts, search behaviour, and UI changes.
 - Rebuilt core CRUD and document-generation workflows in a 10+ year-old service platform using Vue and Laravel, integrating third-party services including Google Maps.
-- Improved maintainability across five large-scale applications by increasing test coverage and reducing high-risk change patterns in legacy codebases.
+- Improved maintainability across five large-scale applications by increasing test coverage, reducing high-risk change patterns, and working with SQL-heavy backends using Eloquent and raw queries.
 - Delivered accessible, polished interfaces from Adobe XD designs across Vue, React, and Next.js, with a focus on performance and usability.
 
 ### Product Builder / Indie Developer - JK Web Dev
 
 Jul 2023 - Present | Side projects and independent builds
 
-- Build and ship independent web and mobile products across Laravel, React, React Native, Expo, Angular, TypeScript, Stripe, SQLite, MySQL, GitHub Actions, and Linux hosting.
-- Own the full product loop: idea shaping, UX decisions, implementation, testing, deployment, maintenance, and iteration.
+- Build and ship independent web and mobile products across Laravel, React, React Native, Expo, Angular/Ionic, TypeScript, Stripe, SQLite, MySQL, Node.js, MongoDB, GitHub Actions, and Linux hosting.
+- Own the full product loop across idea shaping, UX decisions, implementation, testing, deployment, maintenance, and iteration.
 
 #### Trendsetter - AI Goal-Setting Mobile App
 
@@ -79,8 +85,11 @@ Jul 2023 - Present | Side projects and independent builds
 #### Picklewear - Custom E-Commerce Platform
 
 - Designed and built a custom Laravel and React e-commerce platform for an online pickleball retailer, including admin dashboards, product management, order management, reviews, favourites, and newsletter subscriptions.
-- Integrated Stripe payment flows, secure webhook handling, and AusPost order tracking workflows.
+- Integrated Stripe payment flows, secure webhook handling, AusPost order tracking workflows, SEO metadata, and admin inventory controls for [Picklewear](https://picklewear.com.au).
 - Maintained roughly 95% backend test coverage with PHPUnit and deployed through Laravel Forge, DigitalOcean, GitHub Actions, and Linux server workflows.
+
+- Built the current portfolio site in a day using React, Next.js, TypeScript, generated resume assets, and agentic workflows for planning, implementation, review, and iteration.
+- Built several earlier product experiments across Angular/Ionic, Node.js/Express, MongoDB, SQLite, REST APIs, WebSockets, Stripe, and third-party APIs, including Nomster, Freeman's Mowing, Japres, Bantz, and finance/data tools.
 
 ## Education and Certifications
 
