@@ -250,7 +250,7 @@ export const contactLinks: ContactLink[] = [
 export const resumeLinks: ResumeLink[] = [
   {
     label: "Resume",
-    value: "Product-focused full-stack engineer",
+    value: "Download my resume",
     href: "/resumes/jakeb-knowles-resume.pdf",
     downloadName: "jakeb-knowles-resume.pdf",
   },
