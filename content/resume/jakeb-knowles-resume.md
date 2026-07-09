@@ -96,3 +96,9 @@ Jul 2023 - Present | Side projects and independent builds
 Bachelor of Information Technology, Major in Software Development - Griffith University, Oct 2023  
 Academic Improvement Award Recipient, 2023  
 Fundamentals of Digital Marketing - Google, Mar 2024
+
+## References
+
+Available on request.
+
+Professional references include a former Engineering Manager and Senior UX Designer from Simpro.
