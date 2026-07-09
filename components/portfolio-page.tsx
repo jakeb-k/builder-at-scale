@@ -13,6 +13,7 @@ import {
   projects,
   resumeLinks,
   signalStrip,
+  socialLinks,
   workProofs,
 } from "@/content/site";
 import { SignalCanvas } from "@/components/signal-canvas";
@@ -38,6 +39,32 @@ function getLinkBehavior(href: string) {
     target: "_blank",
     rel: "noreferrer",
   };
+}
+
+function GitHubIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path
+        fill="currentColor"
+        d="M12 2C6.48 2 2 6.58 2 12.22c0 4.52 2.87 8.35 6.84 9.71.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.73-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.9 1.57 2.35 1.12 2.92.86.09-.67.35-1.12.63-1.38-2.22-.26-4.55-1.14-4.55-5.05 0-1.12.39-2.03 1.03-2.74-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.04A9.34 9.34 0 0 1 12 6.95c.85 0 1.7.12 2.5.34 1.9-1.32 2.74-1.04 2.74-1.04.55 1.4.2 2.44.1 2.7.64.71 1.03 1.62 1.03 2.74 0 3.93-2.34 4.79-4.57 5.04.36.32.68.94.68 1.9 0 1.38-.01 2.49-.01 2.82 0 .27.18.59.69.49A10.12 10.12 0 0 0 22 12.22C22 6.58 17.52 2 12 2Z"
+      />
+    </svg>
+  );
+}
+
+function LinkedInIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path
+        fill="currentColor"
+        d="M6.94 8.86H3.75v10.39h3.19V8.86ZM5.34 7.45c1.02 0 1.85-.84 1.85-1.86s-.83-1.84-1.85-1.84S3.5 4.57 3.5 5.59s.82 1.86 1.84 1.86Zm5.38 11.8v-5.74c0-.31.02-.62.11-.84.23-.62.77-1.26 1.67-1.26 1.18 0 1.65.95 1.65 2.33v5.51h3.19v-5.89c0-3.16-1.62-4.63-3.78-4.63-1.74 0-2.52.99-2.95 1.68h.02V8.86H7.44c.04.98 0 10.39 0 10.39h3.28Z"
+      />
+    </svg>
+  );
+}
+
+function SocialIcon({ label }: { label: "GitHub" | "LinkedIn" }) {
+  return label === "GitHub" ? <GitHubIcon /> : <LinkedInIcon />;
 }
 
 export function PortfolioPage() {
@@ -226,6 +253,18 @@ export function PortfolioPage() {
             <a href={resumeLinks[0].href} download={resumeLinks[0].downloadName}>
               Resume
             </a>
+            {socialLinks.map((link) => (
+              <a
+                key={link.href}
+                className="site-nav__icon-link"
+                href={link.href}
+                aria-label={link.label}
+                title={link.label}
+                {...getLinkBehavior(link.href)}
+              >
+                <SocialIcon label={link.label} />
+              </a>
+            ))}
           </nav>
         </div>
       </header>

@@ -398,6 +398,21 @@ a {
   border-color: rgba(var(--accent-rgb), 0.2);
 }
 
+.site-nav .site-nav__icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border-radius: 999px;
+}
+
+.site-nav__icon-link svg {
+  width: 1.08rem;
+  height: 1.08rem;
+}
+
 .section {
   position: relative;
   padding: 8rem 0 3rem;

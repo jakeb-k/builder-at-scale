@@ -49,6 +49,11 @@ export type ContactLink = {
   href: string;
 };
 
+export type SocialLink = {
+  label: "GitHub" | "LinkedIn";
+  href: string;
+};
+
 export type ResumeLink = {
   label: string;
   value: string;
@@ -61,6 +66,17 @@ export const navSections: NavSection[] = [
   { id: "now", label: "Now" },
   { id: "principles", label: "How I Work" },
   { id: "contact", label: "Contact" },
+];
+
+export const socialLinks: SocialLink[] = [
+  {
+    label: "GitHub",
+    href: "https://github.com/jakeb-k",
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/jakeb-knowles-software-dev/",
+  },
 ];
 
 export const heroMetrics = [
