@@ -413,6 +413,10 @@ a {
   height: 1.08rem;
 }
 
+.mobile-social-nav {
+  display: none;
+}
+
 .section {
   position: relative;
   padding: 8rem 0 3rem;
@@ -1074,6 +1078,35 @@ a {
 
   .site-nav {
     display: none;
+  }
+
+  .mobile-social-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .mobile-social-nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    color: rgba(239, 247, 246, 0.8);
+    transition: color 220ms ease, background 220ms ease, border-color 220ms ease;
+  }
+
+  .mobile-social-nav a:hover {
+    border-color: rgba(var(--accent-rgb), 0.34);
+    background: rgba(var(--accent-rgb), 0.08);
+    color: rgb(var(--accent-rgb));
+  }
+
+  .mobile-social-nav svg {
+    width: 1.08rem;
+    height: 1.08rem;
   }
 
   .boot-sequence__glyphs {

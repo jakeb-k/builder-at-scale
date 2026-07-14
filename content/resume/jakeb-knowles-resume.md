@@ -3,6 +3,7 @@
 ## Product-Focused Full-Stack Software Engineer | Product Builder
 
 Brisbane, QLD, Australia  
+Phone: [0466 878 212](tel:+61466878212)<br />
 Website: [https://jakebknowles.com](https://jakebknowles.com)  
 LinkedIn: [https://www.linkedin.com/in/jakeb-knowles-software-dev/](https://www.linkedin.com/in/jakeb-knowles-software-dev/)  
 GitHub: [https://github.com/jakeb-k](https://github.com/jakeb-k)

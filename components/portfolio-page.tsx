@@ -239,6 +239,20 @@ export function PortfolioPage() {
             JK
           </a>
 
+          <nav className="mobile-social-nav" aria-label="Social profiles">
+            {socialLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                aria-label={link.label}
+                title={link.label}
+                {...getLinkBehavior(link.href)}
+              >
+                <SocialIcon label={link.label} />
+              </a>
+            ))}
+          </nav>
+
           <nav className="site-nav" aria-label="Section navigation">
             {navSections.map((section) => (
               <a
